@@ -23,7 +23,8 @@ class Auto:
         contador = 0
 
         for asiento in self.asientos:
-            if asiento != None:
+            nombreClase = str(type(asiento))
+            if nombreClase.count("Asiento") != 0:
                contador = contador + 1
  
         return contador
@@ -33,7 +34,8 @@ class Auto:
             return "Las piezas no son originales"
         elif self.registro == self.motor.registro:
             for asiento in self.asientos:
-                if asiento != None:
+                nombreClase = str(type(asiento))
+                if nombreClase.count("Asiento") != 0:
                     if asiento.registro != self.registro or asiento.registro != self.motor.registro:
                         return "Las piezas no son originales"
         
