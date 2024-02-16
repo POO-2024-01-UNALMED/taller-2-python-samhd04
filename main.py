@@ -10,7 +10,7 @@ class Asiento:
 
 class Auto:
     cantidadCreados = 0
-    
+
     def __init__(self, modelo, precio, asientos, marca, motor, registro):
         self.modelo = modelo
         self.precio = precio
@@ -23,13 +23,7 @@ class Auto:
         contador = 0
 
         for asiento in self.asientos:
-            clase1 = str(type(asiento))
-            clase1 = clase1.split(".")
-            clase2 = clase1[1]
-            clase2 = clase2.split("'")
-            nombreClase = clase2[0]
-
-            if nombreClase == "Asiento":
+            if asiento != None:
                contador = contador + 1
  
         return contador
@@ -39,13 +33,7 @@ class Auto:
             return "Las piezas no son originales"
         elif self.registro == self.motor.registro:
             for asiento in self.asientos:
-                clase1 = str(type(asiento))
-                clase1 = clase1.split(".")
-                clase2 = clase1[1]
-                clase2 = clase2.split("'")
-                nombreClase = clase2[0]
-
-                if nombreClase == "Asiento":
+                if asiento != None:
                     if asiento.registro != self.registro or asiento.registro != self.motor.registro:
                         return "Las piezas no son originales"
         
@@ -63,6 +51,5 @@ class Motor:
     def asignarTipo(self, tipo):
         if tipo == "electrico" or tipo == "gasolina":
             self.tipo = tipo
-
 
 
