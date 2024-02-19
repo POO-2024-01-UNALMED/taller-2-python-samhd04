@@ -54,4 +54,3 @@ class Motor:
         if tipo == "electrico" or tipo == "gasolina":
             self.tipo = tipo
 
-
